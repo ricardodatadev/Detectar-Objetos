@@ -3,7 +3,7 @@ from ultralytics import YOLO
 
 model = YOLO('yolo11n.pt')
 
-video = cv2.VideoCapture('video2.mp4')
+video = cv2.VideoCapture('ex01.mp4')
 
 while video.isOpened():
     check, img = video.read()
@@ -17,7 +17,7 @@ while video.isOpened():
 
 
         for box, cls in zip(xy, clas):
-            if int(cls) ==7:
+            if int(cls) ==0:
                 x_min, y_min, x_max, y_max, = box.tolist()
                 cv2.rectangle(img, (x_min, y_min), (x_max, y_max), (255, 0, 0), 3)
 
